@@ -11,7 +11,7 @@ export default [{
   },
   plugins: [
     nodeResolve(),
-    webWorkerLoader({inline: false, preserveFileNames: true}),
+    webWorkerLoader(),
     terser()
   ]
 }];
