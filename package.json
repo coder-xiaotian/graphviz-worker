@@ -1,6 +1,6 @@
 {
   "name": "graphviz-worker",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "lib/index.js",
   "type": "module",
@@ -9,6 +9,8 @@
   },
   "author": "xiaotian",
   "license": "MIT",
+  "repository": "https://github.com/coder-xiaotian/graphviz-worker",
+  "keywords": ["graphviz", "web worker", "@hpcc-js/wasm", "layout"],
   "dependencies": {
     "@hpcc-js/wasm": "^2.8.0"
   },

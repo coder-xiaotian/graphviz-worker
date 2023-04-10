@@ -1,6 +1,6 @@
 # GraphvizWorker
 
-A version of [Graphviz](https://www.graphviz.org/) used for web worker.
+A web worker version of the [@hpcc-js/wasm](https://hpcc-systems.github.io/hpcc-js-wasm/classes/graphviz.Graphviz.html#class-graphviz) library.
 
 ## USAGE
 npm install graphviz-worker
@@ -8,10 +8,9 @@ npm install graphviz-worker
 ```javascript
 import Graphviz from "graphviz-worker";
 
-const graphviz = new Graphviz();
-graphviz.layout(dotSource).then(res => {
-  // do something
-});
+const graphviz = await Graphviz.load();
+const dotSource = "digraph G { Hello -> World }";
+const jsonStr = graphviz.layout(dotSource)
 ```
 
 ## API
@@ -34,8 +33,10 @@ Destroy the web worker.
 ## Types
 ### Format 
 Format: "svg" | "dot" | "json" | "dot_json" | "xdot_json" | "plain" | "plain-ext"
+
 Various graphic and data formats for end user, web, documents and other applications. See [Output Formats](https://graphviz.gitlab.io/docs/outputs/) for more information.
 
 ### Engine
 Engine: "circo" | "dot" | "fdp" | "sfdp" | "neato" | "osage" | "patchwork" | "twopi"
+
 Various algorithms for projecting abstract graphs into a space for visualization. See [Layout Engines](https://graphviz.gitlab.io/docs/layouts/) for more details.
