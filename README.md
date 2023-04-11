@@ -8,9 +8,9 @@ npm install graphviz-worker
 ```javascript
 import Graphviz from "graphviz-worker";
 
-const graphviz = await Graphviz.load();
+const graphviz = new Graphviz();
 const dotSource = "digraph G { Hello -> World }";
-const jsonStr = graphviz.layout(dotSource)
+const jsonStr = await graphviz.layout(dotSource)
 ```
 
 ## API
